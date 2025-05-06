@@ -1,0 +1,29 @@
+\subsection{Integrales inmediatas}
+Con la finalidad de coincidir en la notación con los principales libros de referencia, en ésta subsección nos referiremos a $v(x)$, por simplicidad como $v$, siendo así como, por ejemplo, \cref{eqn:2.3.5}, se escribiría correctamente como
+$$\int \frac{dv(x)}{v(x)}=ln(v(x))+C$$
+Además de permitirnos usar indistintamente $v$ como variable o como función de $x$. Dicho lo anterior, haremos uso del Teorema Fundamental del Cálculo y las fórmulas \ref{eqn:1.3.2} a \ref{eqn:1.3.6}, \ref{eqn:2.13} y \ref{eqn:2.15} para obtener las siguientes fórmulas de integrales:
+
+\begin{empheq}[box=\fbox]{align}
+	\int 1 dx=\int dx&=x+C\label{eqn:2.3.1}\\
+	\int cvdx&=c\int vdx+C\label{eqn:2.3.2}\\
+	\int (u+v-w)dx&=\int udx+\int vdx-\int wdx\label{eqn:2.3.3}\\
+	\int v^ndv&=\frac{v^{n+1}}{n+1}+C\text{ Si }n\neq -1\label{eqn:2.3.4}\\
+	\int \frac{dv}{v}&=ln(v)+C\label{eqn:2.3.5}\\
+	\int e^{v}dv&=e^{v}+C\label{eqn:2.3.6}
+\end{empheq}
+Un primer uso de \cref{eqn:2.3.4} es generalizar \cref{eqn:2.3.1}, ésto al tomar $n=0$, de manera que
+$$\int dv=v+C$$
+como $v$ es una función ($v(x)$), podemos ver la ecuación anterior como una versión del Teorema Fundamental del Cálculo.
+
+A su vez, de las fórmulas \ref{eqn:2.2.1} a \ref{eqn:2.2.6} se obtienen las siguientes:
+\begin{empheq}[box=\fbox]{align}
+	\int \cos v dv&=\sen v+C\label{eqn:2.3.7}\\
+	\int\sen v dv&=-\cos v+C\label{eqn:2.3.8}\\
+	\int \sec^2 v\:dv&=\tan v+C\label{eqn:2.3.9}\\
+	\int \csc^2 v\:dv&=-\cot v+C\label{eqn:2.3.10}\\
+	\int \sec v\tan v dv&=\sec v+C\label{eqn:2.3.11}\\
+	\int \csc v\cot vdv&=-\csc v+C\label{eqn:2.3.12}
+\end{empheq}
+Podemos notar que el caso que no es cubierto por \cref{eqn:2.3.4}, $n=-1$, puede resolverse mediante \cref{eqn:2.3.5}.
+
+Las fórmulas \ref{eqn:2.2.7} a \ref{eqn:2.2.12} también nos brindan integrales inmediatas, pero éstas convienen ser estudiadas en el tema de Integración por Sustitución Trigonométrica o cambio de variable.

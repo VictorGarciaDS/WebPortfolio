@@ -1,0 +1,67 @@
+\section{La diferencial}
+
+La diferencial de la función $f(x)$ se define de la siguiente manera:
+%\setcounter{equation}{-1}
+\begin{align}
+	d\left(\;f(x)\;\right)=\frac{d}{dx}f(x)\; dx\label{eqn:1.3.0}
+\end{align}
+Lo anterior no debe confundirse con la utilización común aunque incorrecta de interpretar la notación de derivación de Leibniz como una fracción. Lo cual se explica a detalle en \cite{flanders_differential_1989}.
+
+Podría decirse que la diferencial de una función es su derivada la que le añadimos al final un factor $dx$, el cual será tan importante como la constante de integración, cuando lleguemos a la sección de integración. Consideraremos la ausencia de cualquiera de ellos, por simplicidad, como un error ``ortográfico''.
+\subsection{Las fórmulas de diferenciales}
+\invisiblesubsubsection{Funciones algebráicas}\label{subsec:2.1.1}
+
+Considerando la definición dada en la ecuación \ref{eqn:1.3.0}, podemos obtener las fórmulas de diferenciales a partir de las fórmulas \ref{eqn:1.1} a \ref{eqn:2.17}. Siendo $u(x), v(x), w(x)$ funciones de $x$ derivables en todo su dominio y $c$ y $n$ constantes, al igual que en \cref{subsec:1.1}.
+\Large
+\begin{empheq}[box=\fbox]{align}
+	d\:c&=0\label{eqn:1.3.1}\\
+	d\:x&=dx\label{eqn:1.3.2}\\
+	d\:cv(x)&=cd\:v\label{eqn:1.3.3}\\
+	d\:(u+v-w)(x)&=d\:u(x)+d\:v(x)-d\:w(x)\label{eqn:1.3.4}\\
+	d\:[v(x)]^n&=n[v(x)]^{n-1}d\:v(x)\label{eqn:1.3.5}\\
+	d\:(uv)(x)&=u(x)d\:v(x)+v(x)d\:u(x)\label{eqn:1.3.6}\\
+	d\:\left(\frac{u}{v}\right)(x)&=\frac{v(x)d\:u(x)-u(x)d\:v(x)}{[v(x)]^2}\label{eqn:1.3.7}\\
+	d\:\left(\frac{c}{v(x)}\right)&=-\frac{c}{[v(x)]^2}d\:v(x)\label{eqn:1.3.8}
+\end{empheq}
+\normalsize
+Se sugiere como ejercicio demostrar \cref{eqn:1.3.7} a partir de \cref{eqn:1.7} y la ecuación \ref{eqn:1.3.0}.
+\invisiblesubsection{Funciones trascendentes}
+
+Siguiendo una estructura similar a la sección anterior, a continuación se presentan las fórmulas de diferenciales de las principales funciones trascendentes.
+\invisiblesubsubsection{Trigonométricas}
+\Large
+\begin{empheq}[box=\fbox]{align}
+	d\:\sen v(x)&=\cos v(x)d\:v(x)\label{eqn:2.2.1}\\
+	d\:\cos v(x)&=-\sen v(x)d\:v(x)\label{eqn:2.2.2}\\
+	d\:\tan v(x)&=[\sec v(x)]^2d\:v(x)\label{eqn:2.2.3}\\
+	d\:\cot v(x)&=-[\csc v(x)]^2d\:v(x)\label{eqn:2.2.4}\\
+	d\:\sec v(x)&=\sec v(x)\tan v(x)d\:v(x)\label{eqn:2.2.5}\\
+	d\:\csc v(x)&=-\csc v(x)\cot v(x)d\:v(x)\label{eqn:2.2.6}
+\end{empheq}
+\normalsize
+\invisiblesubsubsection{Inversas trigonométricas}
+\Large
+\begin{empheq}[box=\fbox]{align}
+	d\:\arcsen v(x)&=\frac{1}{\sqrt{1-[v(x)]^2}}d\:v(x)\label{eqn:2.2.7}\\
+	d\:\arccos v(x)&=-\frac{1}{\sqrt{1-[v(x)]^2}}d\:v(x)\label{eqn:2.2.8}\\
+	d\:\arctan v(x)&=\frac{1}{1+[v(x)]^2}d\:v(x)\label{eqn:2.2.9}\\
+	d\:\arccot v(x)&=-\frac{1}{1+[v(x)]^2}d\:v(x)\label{eqn:2.2.10}\\
+	d\:\arcsec v(x)&=\frac{1}{v(x)\sqrt{[v(x)]^2-1}}d\:v(x)\label{eqn:2.2.11}\\
+	d\:\arccsc v(x)&=-\frac{1}{v(x)\sqrt{[v(x)]^2-1}}d\:v(x)\label{eqn:2.2.12}
+\end{empheq}
+\normalsize
+\invisiblesubsubsection{Logarítmicas}
+\Large
+\begin{empheq}[box=\fbox]{align}
+	d\:\ln v&=\frac{1}{v}d\:v\label{eqn:2.2.13}\\
+	d\:\log_b v&=\frac{\log_b e}{v}d\:v\label{eqn:2.2.14}
+\end{empheq}
+\normalsize
+\invisiblesubsubsection{Exponenciales}
+\Large
+\begin{empheq}[box=\fbox]{align}
+	d\:e^{v}&=e^{v}d\:v\label{eqn:2.2.15}\\
+	d\:a^{v}&=\ln a\cdot a^{v}d\:v\label{eqn:2.2.16}\\
+	d\:u^{v}&=v\cdot[u]^{v-1}d\:u+\ln u\cdot u^{v}d\:v\label{eqn:2.2.17}
+\end{empheq}
+\normalsize

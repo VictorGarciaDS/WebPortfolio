@@ -1,0 +1,120 @@
+\subsection{Sustitución trigonométrica}
+A partir del teorema fundamental del cálculo y las fórmulas \ref{eqn:2.7} a \ref{eqn:2.12}, es posible obtener integrales sencillas como la siguiente:
+\begin{problema}\label{problema10}
+	\begin{align*}
+		\int \frac{dx}{\sqrt{1-x^2}}&=\int\frac{1}{\sqrt{1-x^2}}dx
+		\intertext{Usando \cref{eqn:2.7} con $v=x$,}
+							&=\int d(arc\:sen\: x)
+		\intertext{Por el Teorema Fundamental del cálculo,}
+							&=arc\:sen\:x+C
+	\end{align*}
+\end{problema}
+Sin embargo, existe un proceso que permite resolver integrales que poseen expresiones de la forma $a^2-[v(x)]^2$, $a^2+[v(x)]^2$ y $[v(x)]^2-a^2$. A este proceso se le conoce como \textsl{Integración por sustitución trigonométrica}. Tal proceso es bastante similar al de sustitución algebraica, además de aprovechar las identidades trigonométricas para convertir expresiones que poseen sumas o diferencias dentro de radicales en integrales más simples que se pueden resolver usando las fórmulas \ref{eqn:2.3.1} a \ref{eqn:3.13}, además de incorporar las fórmulas \ref{eqn:2.3.7} a \ref{eqn:2.3.12}.
+
+Un diagrama ilustrativo para entender cuál es la sustitución trigonométrica de acuerdo a la integral a realizarse es el siguiente, que además sirve de ayuda visual para que, al terminar el proceso de integración, se pueda volver a expresar en función de la variable inicial. 
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Expresión&\text{Sustitución}&Triángulo\\
+en la integral&\text{trigonométrica}&asociado\\
+\hline
+$a^2-v^2$&$v=a\:sen\:\theta$&\begin{tikzpicture}[scale=.5]
+							\tkzInit[xmax=5,ymax=3] %\tkzClip[space=.5]
+							\tkzDefPoint(0,0){A} \tkzDefPoint(4,0){B}
+							\tkzDrawTriangle[pythagore](A,B)
+							\tkzGetPoint{C}
+							\tkzMarkRightAngle(A,B,C)
+							\tkzLabelSegment[below,font=\footnotesize](A,B){$\sqrt{a^2 - v^2}$}
+							\tkzLabelSegment[above,font=\footnotesize](A,C){$a$}
+							\tkzLabelSegment[right,font=\footnotesize](B,C){$v$}
+							\tkzMarkAngle[fill= blue!40,size=1.2cm,opacity=.5](B,A,C)
+							\tkzLabelAngle[pos=0.8](B,A,C){$\theta$}
+							\end{tikzpicture}\\
+\hline
+$a^2+v^2$&$v=a\:tan\:\theta$&\begin{tikzpicture}[scale=.5]
+							\tkzInit[xmax=5,ymax=3] %\tkzClip[space=.5]
+							\tkzDefPoint(0,0){A} \tkzDefPoint(4,0){B}
+							\tkzDrawTriangle[pythagore](A,B)
+							\tkzGetPoint{C}
+							\tkzMarkRightAngle(A,B,C)
+							\tkzLabelSegment[below,font=\footnotesize](A,B){$a$}
+							\tkzLabelSegment[above, rotate=35, font=\footnotesize](A,C){$\sqrt{a^2+u^2}$}
+							\tkzLabelSegment[right,font=\footnotesize](B,C){$v$}
+							\tkzMarkAngle[fill= blue!40,size=1.2cm,opacity=.5](B,A,C)
+							\tkzLabelAngle[pos=0.8](B,A,C){$\theta$}
+							\end{tikzpicture}\\
+\hline
+$v^2-a^2$&$v=a\:sec\:\theta$&\begin{tikzpicture}[scale=.5]
+							\tkzInit[xmax=5,ymax=3] %\tkzClip[space=.5]
+							\tkzDefPoint(0,0){A} \tkzDefPoint(4,0){B}
+							\tkzDrawTriangle[pythagore](A,B)
+							\tkzGetPoint{C}
+							\tkzMarkRightAngle(A,B,C)
+							\tkzLabelSegment[below,font=\footnotesize](A,B){$a$}
+							\tkzLabelSegment[above,font=\footnotesize](A,C){$v$}
+							\tkzLabelSegment[below,rotate=90,font=\footnotesize](B,C){$\sqrt{v^2 - a^2}$}
+							\tkzMarkAngle[fill= blue!40,size=1.2cm,opacity=.5](B,A,C)
+							\tkzLabelAngle[pos=0.8](B,A,C){$\theta$}
+							\end{tikzpicture}\\
+\hline
+\end{tabular}\label{tabla2}
+\end{center}
+Veamos ahora como usar la tabla \ref{tabla2} para resolver una integral más general que la vista en \cref{problema10}.
+\begin{problema}[$\int\frac{x^2\:dx}{(3+4x-4x^2)^{\frac{3}{2}}}$]
+Comencemos factorizando el denominador tanto como sea posible, esto al notar que $(2x-1)^2=4x^2-4x+1$, así que
+	\begin{align*}
+		\int\frac{x^2\:dx}{(3+4x-4x^2)^{\frac{3}{2}}}&=\int\frac{x^2\:dx}{[4-(2x+1)^2]^{\frac{3}{2}}}\\
+					&=\int\frac{x^2\:dx}{[2^2-(2x+1)^2]^{\frac{3}{2}}}
+\intertext{Dado que el denominador tiene la forma $a^2-v^2$, efectuamos la sustitución $2x+1=2\:sen\:\theta$, por lo que $x=\frac{2\:sen\:\theta-1}{2}$, así que}
+					&=\int\frac{\left(\frac{2\:sen\:\theta-1}{2}\right)^2\:d\left(\frac{2\:sen\:\theta-1}{2}\right)}{[2^2-(2\:sen\:\theta)^2]^{\frac{3}{2}}}
+					\intertext{Al aplicar la diferencial,}
+					&=\int\frac{\left(\frac{2\:sen\:\theta-1}{2}\right)^2cos\:\theta\:d\theta}{[2^2-2^2\:sen^2\:\theta]^{\frac{3}{2}}}\\
+					&=\int\frac{\frac{\left(2\:sen\:\theta-1\right)^2}{4}cos\:\theta\:d\theta}{[2^2(1-sen^2\:\theta)]^{\frac{3}{2}}}\\
+					&=\int\frac{\frac{\left(2\:sen\:\theta-1\right)^2}{4}cos\:\theta\:d\theta}{2^{3}(1-sen^2\:\theta)^{\frac{3}{2}}}\\
+					&=\frac{1}{32}\int\frac{\left(2\:sen\:\theta-1\right)^2cos\:\theta\:d\theta}{(1-sen^2\:\theta)^{\frac{3}{2}}}
+					\intertext{Al aplicar la identidad trigonométrica \textsl{pitagórica} $sen^2\:\theta+cos^2\:\theta=1$,}
+					&=\frac{1}{32}\int\frac{(4\:sen^2\:\theta-4sen\:\theta+1)cos\:\theta\:d\theta}{(cos^2\:\theta)^{\frac{3}{2}}}\\
+					&=\frac{1}{32}\int\frac{4\:sen^2\:\theta cos\:\theta-4sen\:\theta cos\:\theta+cos\:\theta}{cos^3\:\theta}\:d\theta
+					\intertext{Al descomponer la fracción en una suma de fracciones, simplificar y posteriormente, usando \cref{eqn:2.3.3,eqn:2.3.2} sucesivamente para descomponer en una suma de integrales,}
+					&=\frac{1}{8}\int\frac{sen^2\:\theta}{cos^2\:\theta}d\theta-\frac{1}{8}\int\frac{sen\:\theta}{cos\:\theta}\frac{1}{cos\:\theta} d\theta+\frac{1}{32}\int\frac{1}{cos^2\:\theta}d\theta
+					\intertext{Las identidades trigonométricas \textsl{de razón}, nos permiten reescribir las integrales anteriores como}
+					&=\frac{1}{8}\int tan^2\:\theta\:d\theta-\frac{1}{8}\int tan\:\theta\:sec\:\theta\:d\theta+\frac{1}{32}\int sec^2\:\theta\:d\theta
+					\intertext{Al aplicar la identidad trigonométrica \textsl{pitagórica} $tan^2\:\theta+1=sec^2\:\theta$}
+					&=\frac{1}{8}\int (sec^2\:\theta-1)\:d\theta-\frac{1}{8}\int sec\:\theta \:tan\:\theta\:d\theta+\frac{1}{32}\int sec^2\:\theta\:d\theta\\
+					&=\frac{1}{8}\int sec^2\:\theta\:d\theta-\frac{1}{8}\int d\theta-\frac{1}{8}\int sec\:\theta \:tan\:\theta\:d\theta+\frac{1}{32}\int sec^2\:\theta\:d\theta\\
+					&=\frac{5}{32}\int sec^2\:\theta\:d\theta-\frac{1}{8}\int d\theta-\frac{1}{8}\int sec\:\theta \:tan\:\theta\:d\theta
+					\intertext{Usando \cref{eqn:2.3.1,eqn:2.3.9,eqn:2.3.11},}
+					&=\frac{5}{32}tan\:\theta-\frac{1}{8}\theta-\frac{1}{8}sec\:\theta+C
+					\intertext{Con ayuda de la tabla \ref{tabla2}, es posible identificar que para el cambio de variable efectuado, $\theta=arc\:sen\:\frac{v}{a}$, $tan\:\theta=\frac{v}{\sqrt{a^2-v^2}}$ y $sec\:\theta=\frac{a}{\sqrt{a^2-v^2}}$, así que}
+					&=\frac{5}{32}\frac{2x+1}{\sqrt{2^2-(2x+1)^2}}-\frac{1}{8}arc\:sen \left(\frac{2x+1}{2}\right)-\frac{1}{8}\frac{2}{\sqrt{2^2-(2x+1)^2}}+C\\
+					&=\frac{5(2x+1)}{32\sqrt{3+4x-4x^2}}-\frac{1}{8}arc\:sen \left(\frac{2x+1}{2}\right)-\frac{2}{8\sqrt{3+4x-4x^2}}+C\\
+					&=\frac{10x+3}{32\sqrt{3+4x-4x^2}}-\frac{1}{8}arc\:sen \left(\frac{2x+1}{2}\right)+C
+	\end{align*}
+\end{problema}
+Como se vio en el problema anterior, el uso de identidades trigonométricas, junto a las fórmulas de integrales que poseen expresiones trigonométricas, permite resolver este tipo de integrales.
+
+Un paso importante, efectuado al final de la integral, es regresar la integral a una expresión en función de la variable inicial, para lo cual los triángulos de la tabla \ref{tabla2} fueron de gran ayuda.
+\begin{problema}[$\int\frac{x\:dx}{\sqrt{x^4+10x^2+50}}$]
+	Comencemos notando que $(x^2+5)^2=x^4+10x^2+25$, así que
+	\begin{align*}
+		\int\frac{x\:dx}{\sqrt{x^4+10x^2+50}}&=\int\frac{x\:dx}{\sqrt{5^2+(x^2+5)^2}}
+		\intertext{Notemos que la sustitución correspondiente es $x^2+5=5tan\:\theta$, con $2x\:dx=5sec^2\:\theta\:d\theta$, así que}
+					&=\int \frac{\frac{5sec^2\:\theta\:d\theta}{2}}{\sqrt{5^2+(5tan\:\theta)^2}}\\
+					&=\frac{5}{2}\int \frac{sec^2\:\theta\:d\theta}{\sqrt{5^2+5^2tan^2\:\theta}}\\
+					&=\frac{5}{2}\int \frac{sec^2\:\theta\:d\theta}{\sqrt{5^2(1+tan^2\:\theta)}}\\
+					&=\frac{5}{2}\int \frac{sec^2\:\theta\:d\theta}{\sqrt{5^2sec^2\:\theta}}\\
+					&=\frac{5}{2}\int \frac{sec^2\:\theta\:d\theta}{5sec\:\theta}\\
+					&=\frac{5}{2}\int sec\:\theta\:d\theta\\
+					&=\frac{5}{2}ln\left(tan\:\theta+sec\:\theta\right)+c
+					\intertext{De nuevo, con ayuda de la figura de la tabla \ref{tabla2}, podemos ver que $tan\:\theta=\frac{v}{a}$ y $sec\:\theta=\frac{\sqrt{a^2+v^2}}{a}$, con lo que}
+					&=\frac{5}{2}ln\left(\frac{x^2+5}{5}+\frac{\sqrt{x^4+10x^2+50}}{5}\right)+c\\
+					&=\frac{5}{2}ln\left(\frac{x^2+5+\sqrt{x^4+10x^2+50}}{5}\right)+c\\
+					&=\frac{5}{2}ln\left(x^2+5+\sqrt{x^4+10x^2+50}\right)-\frac{5}{2}ln(5)+c
+					\intertext{Finalmente, tomemos $C=c-\frac{5}{2}ln(5)$, entonces}
+					&=\frac{5}{2}ln\left(x^2+5+\sqrt{x^4+10x^2+50}\right)+C
+	\end{align*}
+\end{problema}
+\input{ArtificiosSustitucionTrigoEjercicios.tex}
+
+\input{ArtificiosSustitucionTrigoProblemas.tex}

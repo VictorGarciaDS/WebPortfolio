@@ -1,0 +1,144 @@
+
+1
+00:00:00,000 --> 00:00:04,999
+ 37th
+
+2
+00:00:05,000 --> 00:00:09,999
+ I received a phone call from somebody who needed my help and they explained to me that this organisation and
+
+3
+00:00:10,000 --> 00:00:14,999
+ They explained to me that this organization and Suffolor Cyber Attack, more specifically, a ransomware attack, which is designed, I-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9-9跟你.
+
+4
+00:00:15,000 --> 00:00:19,999
+ a ransomware attack which is designed to both steal your data and make it unusable.
+
+5
+00:00:20,000 --> 00:00:24,999
+ data and make it unusable. It replicates itself throughout the business and can drive you
+
+6
+00:00:25,000 --> 00:00:29,999
+ and can drive you down to paper-based controls. And this was an opportunity that I thought where I could
+
+7
+00:00:30,000 --> 00:00:34,999
+ opportunity that I saw where I could influence something positively. And it was my job.
+
+8
+00:00:35,000 --> 00:00:39,999
+ And it was my job to investigate what had happened, how it happened, and why.
+
+9
+00:00:40,000 --> 00:00:44,999
+ And I saw something that I hadn't experienced before, first.
+
+10
+00:00:45,000 --> 00:00:49,999
+ I hadn't experienced before first hand. In 2017, the NHS suffered something similar.
+
+11
+00:00:50,000 --> 00:00:54,999
+ suffered something similar and it cost nearly a hundred million pounds to recover.
+
+12
+00:00:55,000 --> 00:01:-1,999
+ This incident costed around £5 million to recover and took 14 months. Yet, why?
+
+13
+00:01:00,000 --> 00:01:04,999
+ Yet, what I saw was the human impact. How this happened? A single video, video, video, video, video, video, video, video.
+
+14
+00:01:05,000 --> 00:01:09,999
+ How this happened? A single individual clicked a link, and a single individual enabled this.
+
+15
+00:01:10,000 --> 00:01:14,999
+ and enabled this unknowingly to happen to an organization. Multiple people were signed off sick due to strapa...
+
+16
+00:01:15,000 --> 00:01:19,999
+ we've all resigned off sick due to stress and multiple people weren't able to go to work the next day.
+
+17
+00:01:20,000 --> 00:01:24,999
+ to go to work the next day and carry out their job. Now for me, cyber security.
+
+18
+00:01:25,000 --> 00:01:29,999
+ me cyber security is a very technological focused term and yet...
+
+19
+00:01:30,000 --> 00:01:34,999
+ And yet, IBM did a study in 2021, a 95% of cyber attacks, attacks, attacks, attacks,
+
+20
+00:01:35,000 --> 00:01:39,999
+ 25% of cyber attacks use the human element. Now.
+
+21
+00:01:40,000 --> 00:01:44,999
+ Now that's all well and good but what does that actually mean?
+
+22
+00:01:45,000 --> 00:01:49,999
+ actually mean. It means people can be exploited too. There's no lines of code and there's no
+
+23
+00:01:50,000 --> 00:01:54,999
+ no lines of code and there's no fancy software. Cybersecurity is the, as far as the media is concerned,
+
+24
+00:01:55,000 --> 00:02:-1,999
+ as far as the media is concerned, maybe teenagers and their bedrooms causing trouble stealing things.
+
+25
+00:02:00,000 --> 00:02:04,999
+ or stealing things and learning how to use them. Yet what people don't see is the M-DM-DM.
+
+26
+00:02:05,000 --> 00:02:09,999
+ But people don't see as the impact on how it's day to day life. And this incident from...
+
+27
+00:02:10,000 --> 00:02:14,999
+ And this incident for me made me think slightly differently around cyber security.
+
+28
+00:02:15,000 --> 00:02:19,999
+ I'm recently I had an opportunity which presented this thought
+
+29
+00:02:20,000 --> 00:02:24,999
+ presented this thought process. I was commissioned to evade security. T-t-t-t-t-t-t-t-t-t-t-t-t-t-t- perfectly clear.
+
+30
+00:02:25,000 --> 00:02:29,999
+ to evade security controls for a very well-known building in London.
+
+31
+00:02:30,000 --> 00:02:34,999
+ building in London. That's a snazzy way of saying break-in, and effectively, it was my job to see if I could get past this, this, this, this, this, this, this, this, this, this, this, this, this, this, this, this, this, this, this, this, this,
+
+32
+00:02:35,000 --> 00:02:39,999
+ It was my job to see if I could get past the security controls and get into the building.
+
+33
+00:02:40,000 --> 00:02:44,999
+ and get into the building. And so, for me, thinking kind of outside of the box, this building, da da da, da da da, da da, da da da, da da da, da da da,
+
+34
+00:02:45,000 --> 00:02:49,999
+ This building has floor-to-ceiling doors, 24-7 skewer team, endless budget for this kind of thing based on where they they they they they they they they they they they they they they they they they they they they they they he
+
+35
+00:02:50,000 --> 00:02:54,999
+ budget for this kind of thing based on where they are. And so, I think it's slightly outside.
+
+36
+00:02:55,000 --> 00:03:-1,999
+ slightly outside, I need you to come up with a different plan.

@@ -1,0 +1,50 @@
+\subsection{Exponentes racionales}
+Hasta ahora hemos trabajado con expresiones en las que la variable sobre la que estamos integrando posee un exponente entero, sin embargo vale la pena estudiar también aquellas integrales que poseen expresiones con exponentes racionales.
+
+La manera más simple de abordar tales integrales es efectuar un cambio de variable algebraico siguiendo el proceso que se describe a continuación, suponiendo sin pérdida de generalidad que la variable sobre la que estamos integrando es $x$.
+\begin{enumerate}
+	\item Sea $(d_1,d_2,\ldots)$ la lista de todos los denominadores de los exponentes de todas las apariciones de $x$ en la integral. En caso de contar con exponentes enteros, estos poseerán, naturalmente, denominador 1.
+	\item Sea $m=mcm(d_1,d_2,\ldots)$ el mínimo común múltiplo de tales denominadores.
+	\item Realizamos el cambio de variable $x=z^m$.
+\end{enumerate}
+El cambio de variable anterior permite convertir la integral en una que posee solo exponentes enteros, permitiéndonos emplear de forma usual las herramientas utilizadas en secciones previas.
+\begin{problema}[$\int \frac{dx}{\sqrt{x}+\sqrt[4]{x}}$]
+	Notemos que los denominadores de los exponentes que aparecen son ambos $2$ y $4$, con $mcm(2,4)=4$, así que el cambio de variable a efectuarse es $x=z^4$. Luego,
+	\begin{align*}
+		\int \frac{dx}{\sqrt{x}+\sqrt[4]{x}}&=\int \frac{4z^3\:dz}{z^2+z}\\
+									&=4\int \frac{z^2\:dz}{z+1}\\
+									&=4\int \frac{z^2-1+1}{z+1}dz\\
+									&=4\left(\int \frac{z^2-1}{z+1}dz+\int\frac{dz}{z+1}\right)\\
+									&=4\int (z-1)\:dz+4\int\frac{dz}{z+1}	\\
+									&=4\int z\:dz-4\int dz+4ln(z-1)\\
+									&=4\frac{z^2}{2}-4z+4ln(z-1)+C\\
+									&=2z^2-4z+4ln(z-1)+C
+	\end{align*}
+\end{problema}
+\begin{problema}[$\int \frac{6\sqrt[30]{x}(\sqrt[3]{x}+1)+5\sqrt[3]{x}+10}{30\sqrt[6]{x^5}(\sqrt[3]{x}+1)}dx$]
+	Notemos que es posible reescribir la en forma de exponentes racionales:
+	\begin{align*}
+		\int \frac{6\sqrt[30]{x}(\sqrt[3]{x}+1)+5\sqrt[3]{x}+10}{30\sqrt[6]{x^5}(\sqrt[3]{x}+1)}dx&=\int\frac{6x^{\frac{1}{30}}(x^{\frac{1}{3}}+1)+5x^{\frac{1}{3}}+10}{30x^{\frac{5}{6}}(x^{\frac{1}{3}}+1)}dx
+		\intertext{Los denominadores de los exponentes son $30,3,3,6,3$, en orden de aparición, entonces el cambio de variable a efectuarse es $x=z^{30}$, así que podemos reescribir la integral como}
+		&=\int\frac{6(z^{30})^{\frac{1}{30}}\left[(z^{30})^{\frac{1}{3}}+1\right]+5(z^{30})^{\frac{1}{3}}+10}{30(z^{30})^{\frac{5}{6}}\left[(z^{30})^{\frac{1}{3}}+1\right]}d(z^{30})\\
+		&=\int \frac{6z(z^{10}+1)+5z^{10}+10}{30z^{25}(z^{10}+1)}(30z^{29})dz\\
+		&=\int \frac{6z(z^{10}+1)+5z^{10}+10}{z^{25}(z^{10}+1)}z^{29}dz\\
+		&=\int \frac{6z(z^{10}+1)z^{29}}{z^{25}(z^{10}+1)}dz+\int \frac{5z^{10}+10}{z^{25}(z^{10}+1)}z^{29}dz\\
+		&=\int 6z^5dz+\int \frac{5z^{14}+10z^4}{z^{10}+1}dz\\
+		&=\int 6z^5dz+\int 5z^4dz\:dz+\int \frac{5z^4\:dz}{z^{10}+1}\\
+		&=6\int z^5dz+5\int z^4dz\:dz+\int \frac{5z^4\:dz}{z^{10}+1}
+		\intertext{Las primeras dos integrales se resuelven utilizando \cref{eqn:2.3.4}, mientras que para la tercera integral usaremos el caso 2 de la tabla \ref{tabla2}, es decir, realizamos el cambio de variable $z^5=tan\:\theta$, para el cual $5z^4\:dz=d(z^5)=d(tan\:\theta)=sec^2\:\theta\:d\theta$}
+		&=z^6+z^5+\int \frac{sec^2\:\theta\:d\theta}{tan^2\:\theta+1}\\
+		&=z^6+z^5+\int \frac{sec^2\:\theta\:d\theta}{sec^2\:\theta}\\
+		&=z^6+z^5+\int d\theta\\
+		&=z^6+z^5+\theta+C
+		\intertext{De la tabla \ref{tabla2}, se sigue que $\theta=arc\:tan\:z^5$, así que}
+		&=z^6+z^5+arc\:tan\:z^5+C
+		\intertext{Finalmente, como $x=z^{30}$, entonces}
+		&=\sqrt[5]{x}+\sqrt[6]{x}+arc\:tan\:(\sqrt[6]{x})+C
+	\end{align*}
+\end{problema}
+
+\input{ArtificiosExponentesRacionalesEjercicios.tex}
+
+\input{ArtificiosExponentesRacionalesProblemas.tex}

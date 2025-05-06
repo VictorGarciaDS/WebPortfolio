@@ -1,0 +1,54 @@
+\subsection{Funciones trascendentes}
+
+Usaremos indistintamente $\cot$ y $ctg$. Además, supondremos que cada función trigonométrica es continua en $v(x)$ como ya se había mencionado.
+\subsubsection{Trigonométricas}
+\Large
+\begin{empheq}[box=\fbox]{align}
+	\frac{d}{dx}\sen v(x)&=\cos v(x)\frac{d}{dx}v(x)\label{eqn:2.1}\\
+	\frac{d}{dx}\cos v(x)&=-\sen v(x)\frac{d}{dx}v(x)\label{eqn:2.2}\\
+	\frac{d}{dx}\tan v(x)&=[\sec v(x)]^2\frac{d}{dx}v(x)\label{eqn:2.3}\\
+	\frac{d}{dx}\cot v(x)&=-[\csc v(x)]^2\frac{d}{dx}v(x)\label{eqn:2.4}\\
+	\frac{d}{dx}\sec v(x)&=\sec v(x)\tan v(x)\frac{d}{dx}v(x)\label{eqn:2.5}\\
+	\frac{d}{dx}\csc v(x)&=-\csc v(x)\cot v(x)\frac{d}{dx}v(x)\label{eqn:2.6}
+\end{empheq}
+\normalsize
+
+\subsubsection{Inversas Trigonométricas}
+\Large
+\begin{empheq}[box=\fbox]{align}
+	\frac{d}{dx}\arcsen v(x)&=\frac{1}{\sqrt{1-[v(x)]^2}}\frac{d}{dx}v(x)\label{eqn:2.7}\\
+	\frac{d}{dx}\arccos v(x)&=-\frac{1}{\sqrt{1-[v(x)]^2}}\frac{d}{dx}v(x)\label{eqn:2.8}\\
+	\frac{d}{dx}\arctan v(x)&=\frac{1}{1+[v(x)]^2}\frac{d}{dx}v(x)\label{eqn:2.9}\\
+	\frac{d}{dx}\arccot v(x)&=-\frac{1}{1+[v(x)]^2}\frac{d}{dx}v(x)\label{eqn:2.10}\\
+	\frac{d}{dx}\arcsec v(x)&=\frac{1}{v(x)\sqrt{[v(x)]^2-1}}\frac{d}{dx}v(x)\label{eqn:2.11}\\
+	\frac{d}{dx}\arccsc v(x)&=-\frac{1}{v(x)\sqrt{[v(x)]^2-1}}\frac{d}{dx}v(x)\label{eqn:2.12}
+\end{empheq}
+\normalsize
+
+\input{DerivadaTrascendentesEjerciciosTrigoInv.tex}
+
+\subsubsection{Logarítmicas}
+\Large
+\begin{empheq}[box=\fbox]{align}
+	\frac{d}{dx}\ln v(x)&=\frac{1}{v(x)}\frac{d}{dx}v(x)\label{eqn:2.13}\\
+	\frac{d}{dx}\log_b v(x)&=\frac{\log_b e}{v(x)}\frac{d}{dx}v(x)\label{eqn:2.14}
+\end{empheq}
+\normalsize
+
+\subsubsection{Exponenciales}
+\large
+\begin{empheq}[box=\fbox]{align}
+	\frac{d}{dx}e^{v(x)}&=e^{v(x)}\frac{d}{dx}v(x)\label{eqn:2.15}\\
+	\frac{d}{dx}a^{v(x)}&=\ln a\cdot a^{v(x)}\frac{d}{dx}v(x)\label{eqn:2.16}\\
+	\frac{d}{dx}[u(x)]^{v(x)}&=v(x)\cdot[u(x)]^{v(x)-1}\frac{d}{dx}u(x)+\ln u(x)\cdot [u(x)]^{v(x)}\frac{d}{dx}v(x)\label{eqn:2.17}
+\end{empheq}
+\normalsize
+
+\input{DerivadaTrascendentesEjerciciosLogexp.tex}
+
+Algunas de las fórmulas anteriores se demuestran, a grandes rasgos, de la siguiente forma:
+
+\begin{itemize}
+	\item Para demostrar \cref{eqn:2.16} se usa que $a^{v}=e^{\ln a\: v}$ y \cref{eqn:2.15}.
+	\item Para demostrar \cref{eqn:2.17} se usa que $u^{v}=e^{\ln(u)\:\cdot v}$, además de \cref{eqn:2.15,eqn:1.6,eqn:2.13}.
+\end{itemize}

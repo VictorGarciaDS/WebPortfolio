@@ -1,0 +1,53 @@
+\usepackage{libertine}
+\usepackage{libertinust1math}
+\usepackage[T1]{fontenc}
+
+%\usepackage{geometry}
+%\usepackage[left=0cm,top=0cm,right=0cm,bottom=0cm,marginparwidth=0mm,marginparsep=0mm,margin=0cm]{geometry}
+
+% para o markdown
+\usepackage[footnotes,definitionLists,hashEnumerators,smartEllipses, hybrid]{markdown}
+  \ifdefined\mobile
+    \markdownSetup{rendererPrototypes={
+      link = {\href{#2}{#1}}
+    }}
+  \fi
+\newcommand{\hash}{\#}
+
+\usepackage{microtype}
+
+\usepackage{tocloft} % para mudar o titulo do indice
+
+% usado para a capa...
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{varwidth}
+\pgfdeclarelayer{bg}    % declare background layer
+\pgfdeclarelayer{front} 
+\pgfsetlayers{bg,main,front}  % set the order of the layers (main is the standard layer)
+\usepackage[hidelinks]{hyperref}
+%\usepackage{calc}
+\usetikzlibrary{calc}
+
+
+% usado par ao índice
+\addto\captionsportuguese{
+  \renewcommand{\contentsname}
+    {}% A frase que aparece no lugar de "Conteúdo" no índice
+}
+
+% usado para limitar o tamanho das imagens
+\usepackage[export]{adjustbox}
+
+
+%\def \titulo {Título do Artigo} 
+%\def \autor {} 
+%\def \tradutor {} 
+%\def \url {} 
+%\def \CriadorDestePDF {}
+
+% usado para fonte decorativa
+\usepackage{lettrine}
+\usepackage{GoudyIn}
+\renewcommand{\LettrineFontHook}{\GoudyInfamily{}}
+\newcommand{\DECORAR}[3][]{\lettrine[lines=3,loversize=.115,#1]{#2}{#3}}

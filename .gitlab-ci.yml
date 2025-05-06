@@ -1,12 +1,25 @@
-image: node:latest
+image: alpine:latest
 
 stages:
   - deploy
+  - mirror
 
 deploy_to_netlify:
   stage: deploy
+  image: node:latest
   script:
     - npm install -g netlify-cli
     - netlify deploy --prod --dir=. --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID
+  only:
+    - main
+
+mirror_to_github:
+  stage: mirror
+  script:
+    - apk add git openssh
+    - git config --global user.name "GitLab CI"
+    - git config --global user.email "ci@gitlab.com"
+    - git remote add github https://$GITHUB_TOKEN@github.com/TU_USUARIO/TU_REPO_GITHUB.git
+    - git push --mirror github
   only:
     - main

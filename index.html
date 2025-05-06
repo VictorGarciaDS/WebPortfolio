@@ -354,21 +354,26 @@
 
                 <h3>Contacto</h3>
                 <img src="assets/img/lines.svg" class="img-lines" alt="lines">
-                <form><!--method="post" action="mailto:victor.garcia@cimat.mx?subject=Quiero contratarte &body=$('#consulta')" class="form-consulta" enctype="text/plain">-->
-                    <!-- action="https://github.com/VictorGarciaDS/PHPForPersonal/blob/master/envia.php" method="post" class="form-consulta">-->
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form-consulta">
+                    <!-- Campo oculto para Netlify -->
+                    <input type="hidden" name="form-name" value="contact">
+                    <p style="display:none;">
+                      <label>No llenar esto si eres humano: <input name="bot-field" /></label>
+                    </p>
+                    
                     <div class="row">
-                        <div class="col-sm-6">
-                            <input type="text" name="name" class="form-control mt-x-0" placeholder="Nombre" required>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="email" name="email" class="form-control" placeholder="Email" required>   
-                        </div>
-                        <div class="col-sm-12">
-                            <textarea name="consulta" id="consulta" class="form-control" placeholder="Mensaje" required></textarea>
-                        </div>
+                      <div class="col-sm-6">
+                        <input type="text" name="name" class="form-control mt-x-0" placeholder="Nombre" required>
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                      </div>
+                      <div class="col-sm-12">
+                        <textarea name="consulta" id="consulta" class="form-control" placeholder="Mensaje" required></textarea>
+                      </div>
                     </div>
-                    <button href="#" class="btn btn-border" type="submit">Contrátame <span class="glyphicon glyphicon-send"></span></button>
-                </form>
+                    <button class="btn btn-border" type="submit">Contrátame <span class="glyphicon glyphicon-send"></span></button>
+                  </form>                  
             </div>
         </section><!-- /.section-form -->
 

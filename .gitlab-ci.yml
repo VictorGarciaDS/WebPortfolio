@@ -4,22 +4,31 @@ stages:
   - deploy
   - mirror
 
+variables:
+  GIT_STRATEGY: fetch
+  NODE_ENV: production
+
+# Despliegue a Netlify
 deploy_to_netlify:
   stage: deploy
   image: node:latest
   script:
     - npm install -g netlify-cli
+    - echo "Escribiendo netlify.toml..."
+    - echo -e "[build]\n  publish = \".\"\n\n[site]\n  id = \"$NETLIFY_SITE_ID\"" > netlify.toml
     - netlify deploy --prod --dir=. --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID
   only:
     - main
 
+# Mirror a GitHub
 mirror_to_github:
   stage: mirror
+  image: alpine:latest
   script:
     - apk add git openssh
     - git config --global user.name "GitLab CI"
     - git config --global user.email "ci@gitlab.com"
-    - git remote add github https://$GITHUB_TOKEN@github.com/TU_USUARIO/TU_REPO_GITHUB.git
+    - git remote add github https://$GITHUB_TOKEN@github.com/VictorGarciaDS/GitlabPortfolio.git
     - git push --mirror github
   only:
     - main

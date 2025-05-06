@@ -357,10 +357,9 @@
                 <form name="datascience-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form-consulta">
                     <!-- Campo oculto para Netlify -->
                     <input type="hidden" name="form-name" value="contact">
-                    <p style="display:none;">
-                      <label>No llenar esto si eres humano: <input name="bot-field" /></label>
+                    <p style="display:none">
+                        <label>Don’t fill this out: <input name="bot-field" /></label>
                     </p>
-                    
                     <div class="row">
                       <div class="col-sm-6">
                         <input type="text" name="name" class="form-control mt-x-0" placeholder="Nombre" required>
@@ -372,10 +371,10 @@
                         <textarea name="consulta" id="consulta" class="form-control" placeholder="Mensaje" required></textarea>
                       </div>
                     </div>
-                    <button class="btn btn-border" type="submit">Contrátame <span class="glyphicon glyphicon-send"></span></button>
-                  </form>
-                  <div id="thank-you-message" style="display: none; margin-top: 15px; color: #f8f9fa; font-weight: bold;">
-                    ¡Gracias por su mensaje! Me pondré en contacto con usted pronto.
+                    <button type="submit">Contrátame<span class="glyphicon glyphicon-send"></span></button>
+                </form>
+                <div id="thank-you-message" style="display: none; margin-top: 15px; color: #f8f9fa; font-weight: bold;">
+                ¡Gracias por su mensaje! Me pondré en contacto con usted pronto.
                 </div>
             </div>
         </section><!-- /.section-form -->

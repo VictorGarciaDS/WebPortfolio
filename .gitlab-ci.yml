@@ -20,7 +20,7 @@ deploy_to_netlify:
   only:
     - main
 
-# Mirror a GitHub
+# Mirror a GitHub.
 mirror_to_github:
   stage: mirror
   image: alpine:latest

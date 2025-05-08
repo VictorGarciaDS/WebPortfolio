@@ -24,16 +24,19 @@ deploy_to_netlify:
 mirror_to_github:
   stage: mirror
   image: alpine:latest
-  variables:
-    GIT_TRACE: "1"
-    GIT_CURL_VERBOSE: "1"
-  script:
+  before_script:
     - apk add --no-cache git openssh
     - git config --global user.name "GitLab CI"
     - git config --global user.email "ci@gitlab.com"
-    - git remote add github https://$GITHUB_SAME_TOKEN_FROM_API@github.com/VictorGarciaDS/GitlabPortfolio
-    - git fetch origin
-    - git push github --all
-    - git push github --tags
+  script:
+    - echo "Clonando el repositorio desde GitLab..."
+    - git clone --mirror https://gitlab.com/mackonde1/victorgarciads-site
+    - cd $(basename "mackonde1/victorgarciads-site").git
+
+    - echo "Agregando el remoto de GitHub..."
+    - git remote add github https://$GITHUB_TOKEN@github.com/VictorGarciaDS/GitlabPortfolio.git
+
+    - echo "Haciendo push --mirror a GitHub..."
+    - git push --mirror github
   only:
     - main

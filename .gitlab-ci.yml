@@ -31,7 +31,7 @@ mirror_to_github:
     - apk add --no-cache git openssh
     - git config --global user.name "GitLab CI"
     - git config --global user.email "ci@gitlab.com"
-    - git remote add github https://$GITHUB_TOKEN@github.com/VictorGarciaDS/GitlabPortfolio.git
+    - git remote add github https://$GITHUB_SAME_TOKEN_FROM_API@github.com/VictorGarciaDS/GitlabPortfolio.git
     - git fetch origin
     - git push github --all
     - git push github --tags

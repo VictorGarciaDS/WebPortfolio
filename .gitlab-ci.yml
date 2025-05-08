@@ -24,13 +24,15 @@ deploy_to_netlify:
 mirror_to_github:
   stage: mirror
   image: alpine:latest
+  variables:
+    GIT_TRACE: "1"
+    GIT_CURL_VERBOSE: "1"
   script:
-    - apk add git openssh
+    - apk add --no-cache git openssh
     - git config --global user.name "GitLab CI"
     - git config --global user.email "ci@gitlab.com"
-    - export GIT_TRACE=1
-    - export GIT_CURL_VERBOSE=1
     - git remote add github https://$GITHUB_TOKEN@github.com/VictorGarciaDS/GitlabPortfolio.git
+    - git fetch origin
     - git push github --all
     - git push github --tags
   only:

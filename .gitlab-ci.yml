@@ -15,7 +15,6 @@ deploy_to_netlify:
   script:
     - npm install -g netlify-cli
     - echo "Escribiendo netlify.toml..."
-    - echo "Testing the double push"
     - echo -e "[build]\n  publish = \".\"\n\n[site]\n  id = \"$NETLIFY_SITE_ID\"" > netlify.toml
     - netlify deploy --prod --dir=. --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID
   only:
